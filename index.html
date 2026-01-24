@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - Futuristic Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="grid-background"></div>
+    <div class="particles-container"></div>
+    
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header / Navigation -->
+        <header class="neon-header">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <h1 class="logo-text">NEXUS<span class="flicker">_</span></h1>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#about" class="nav-link active"><i class="fas fa-user"></i> <span>About</span></a></li>
+                    <li><a href="#projects" class="nav-link"><i class="fas fa-gamepad"></i> <span>Projects</span></a></li>
+                    <li><a href="#skills" class="nav-link"><i class="fas fa-code"></i> <span>Skills</span></a></li>
+                    <li><a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> <span>Contact</span></a></li>
+                </ul>
+            </nav>
+            <div class="hamburger" id="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Hero Section -->
+            <section class="hero-section" id="about">
+                <div class="hero-content">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <div class="terminal-title">nexus_portfolio.terminal</div>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">nexus@portfolio:~$</span> whoami
+                            </div>
+                            <div class="terminal-line output">
+                                <h2 class="cyber-name">SEAN TANDOC</h2>
+                                <p class="cyber-title">FULL-STACK DEVELOPER & GAME DESIGNER</p>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">nexus@portfolio:~$</span> cat bio.txt
+                            </div>
+                            <div class="terminal-line output">
+                                <p>I create immersive digital experiences at the intersection of cutting-edge web technology and interactive gaming. Specializing in reactive interfaces, real-time applications, and game mechanics.</p>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">nexus@portfolio:~$</span> <span class="cursor">█</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-code"></i></div>
+                            <div class="stat-value" data-target="150">0</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-gamepad"></i></div>
+                            <div class="stat-value" data-target="42">0</div>
+                            <div class="stat-label">Games</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-bolt"></i></div>
+                            <div class="stat-value" data-target="98">0</div>
+                            <div class="stat-label">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section class="projects-section" id="projects">
+                <h2 class="section-title"><span class="glitch" data-text="PROJECTS">PROJECTS</span></h2>
+                <div class="projects-container">
+                    <!-- Snake Game Container -->
+                    <div class="project-container full-game">
+                        <div class="snake-game-container">
+                            <h1 class="snake-title">🐍 SNAKE GAME</h1>
+                            <div class="snake-game-wrapper">
+                                <div class="score-board">
+                                    Score: <span id="snakeScore">0</span>
+                                </div>
+                                <div class="game-canvas-container">
+                                    <canvas id="snakeGameCanvas"></canvas>
+                                    <div id="snakeGameOverScreen" class="game-over-screen">
+                                        <h2>GAME OVER!</h2>
+                                        <p>Final Score: <span id="snakeFinalScore">0</span></p>
+                                        <button class="restart-btn" onclick="restartSnakeGame()">PLAY AGAIN</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="mobile-controls">
+                                    <div class="controls-grid">
+                                        <button class="control-btn up" id="snakeBtnUp">▲</button>
+                                        <button class="control-btn left" id="snakeBtnLeft">◄</button>
+                                        <div class="control-btn center">🐍</div>
+                                        <button class="control-btn right" id="snakeBtnRight">►</button>
+                                        <button class="control-btn down" id="snakeBtnDown">▼</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="keyboard-controls">
+                                    <p><strong>Desktop:</strong> Arrow Keys or WASD</p>
+                                    <p><strong>Mobile:</strong> Use buttons above</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fireworks Container -->
+                    <div class="project-container full-game">
+                        <div class="fireworks-container">
+                            <h1 class="fireworks-title">🎆 FIREWORKS SIMULATION</h1>
+                            <div class="fireworks-wrapper">
+                                <canvas id="fireworksCanvas"></canvas>
+                                <div class="fireworks-info">
+                                    <p>Sit back and watch the fireworks display.</p>
+                                    <p>Click anywhere to create a custom explosion.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="skills-section" id="skills">
+                <h2 class="section-title"><span class="glitch" data-text="TECH STACK">TECH STACK</span></h2>
+                <div class="skills-container">
+                    <div class="skill-category">
+                        <h3 class="category-title"><i class="fas fa-gamepad"></i> GAME DEV</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Unity</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Unreal Engine</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="75"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">WebGL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Three.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title"><i class="fas fa-code"></i> WEB TECH</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">HTML5/CSS3</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">JavaScript</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="92"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">React</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="88"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Node.js</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="85"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3 class="category-title"><i class="fas fa-server"></i> BACKEND</h3>
+                        <div class="skill-list">
+                            <div class="skill-item">
+                                <span class="skill-name">Python/Django</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="87"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">PostgreSQL</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="82"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Redis</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="78"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <span class="skill-name">Docker</span>
+                                <div class="skill-bar">
+                                    <div class="skill-level" data-level="83"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="contact-section" id="contact">
+                <h2 class="section-title"><span class="glitch" data-text="CONNECT">CONNECT</span></h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h3>EMAIL</h3>
+                            <p>sjrt_5504@yahoo.com</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h3>GITHUB</h3>
+                            <p>@devisean</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-twitter"></i>
+                            </div>
+                            <h3>TWITTER</h3>
+                            <p>@devisean</p>
+                        </div>
+                        <div class="contact-card">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <h3>LINKEDIN</h3>
+                            <p>Sean Tandoc</p>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="NAME" required>
+                            <div class="input-underline"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="EMAIL" required>
+                            <div class="input-underline"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="MESSAGE" rows="4" required></textarea>
+                            <div class="input-underline"></div>
+                        </div>
+                        <button type="submit" class="submit-btn">
+                            <span>SEND MESSAGE</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="cyber-footer">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <span class="logo-icon">⚡</span>
+                    <span class="logo-text">NEXUS</span>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2024 NEXUS DEV STUDIOS. ALL SYSTEMS OPERATIONAL.</p>
+                </div>
+            </div>
+            <div class="terminal-output">
+                <div class="terminal-line">
+                    <span class="prompt">system@nexus:~$</span> status --portfolio
+                </div>
+                <div class="terminal-line output">
+                    <span class="success">✓</span> Portfolio system online
+                </div>
+                <div class="terminal-line output">
+                    <span class="success">✓</span> Games running smoothly
+                </div>
+                <div class="terminal-line output">
+                    <span class="success">✓</span> Ready for connections
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/snake.js"></script>
+    <script src="assets/js/firework.js"></script>
+</body>
+</html>

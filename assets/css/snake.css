@@ -1,0 +1,259 @@
+/* This CSS is now only used for the standalone snake.html page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #2c3e50;
+    font-family: 'Arial', sans-serif;
+    padding: 10px;
+}
+
+.game-container {
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #9bbc0f;
+    margin-bottom: 20px;
+    font-size: clamp(1.8em, 5vw, 2.5em);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.score-board {
+    background-color: #0f380f;
+    color: #9bbc0f;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    font-size: clamp(1em, 3vw, 1.2em);
+    font-weight: bold;
+    display: inline-block;
+}
+
+.canvas-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 500px;
+}
+
+#gameCanvas {
+    display: block;
+    margin: 0 auto;
+    background-color: #9bbc0f;
+    border: 8px solid #0f380f;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    max-width: 100%;
+    max-height: 70vh;
+    aspect-ratio: 1;
+}
+
+#gameOverScreen {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(15, 56, 15, 0.95);
+    color: #9bbc0f;
+    border-radius: 10px;
+    padding: clamp(20px, 5vw, 40px);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#gameOverScreen.show {
+    display: flex;
+}
+
+#gameOverScreen h2 {
+    font-size: clamp(1.8em, 5vw, 3em);
+    margin-bottom: 20px;
+}
+
+#gameOverScreen p {
+    font-size: clamp(1.2em, 3vw, 1.5em);
+    margin: 10px 0;
+}
+
+.restart-btn {
+    background-color: #9bbc0f;
+    color: #0f380f;
+    border: none;
+    padding: clamp(12px, 3vw, 15px) clamp(20px, 4vw, 30px);
+    font-size: clamp(1em, 3vw, 1.2em);
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.2s;
+    width: 100%;
+    max-width: 200px;
+}
+
+.restart-btn:hover {
+    transform: scale(1.1);
+}
+
+.restart-btn:active {
+    transform: scale(0.95);
+}
+
+.mobile-controls {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.control-btn {
+    background-color: #0f380f;
+    color: #9bbc0f;
+    border: 3px solid #9bbc0f;
+    border-radius: 10px;
+    font-size: clamp(1.5em, 4vw, 2em);
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.1s;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    width: 100%;
+    min-height: 60px;
+}
+
+.control-btn:active {
+    background-color: #9bbc0f;
+    color: #0f380f;
+    transform: scale(0.95);
+}
+
+.control-btn.up {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.control-btn.left {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.control-btn.center {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: #306230;
+    border-color: #0f380f;
+    font-size: clamp(1em, 3vw, 1.2em);
+    cursor: default;
+}
+
+.control-btn.right {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.control-btn.down {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.keyboard-controls {
+    margin-top: 20px;
+    color: #9bbc0f;
+    font-size: clamp(0.8em, 2vw, 0.9em);
+    padding: 0 10px;
+}
+
+.keyboard-controls p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .game-container {
+        padding: 5px;
+    }
+    
+    .mobile-controls {
+        max-width: 250px;
+    }
+    
+    .control-btn {
+        min-height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .game-container {
+        padding: 0;
+    }
+    
+    #gameCanvas {
+        border-width: 5px;
+    }
+    
+    .mobile-controls {
+        max-width: 220px;
+        gap: 8px;
+    }
+    
+    .control-btn {
+        min-height: 45px;
+        border-width: 2px;
+    }
+    
+    .score-board {
+        padding: 8px 15px;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-height: 600px) {
+    body {
+        min-height: 100%;
+        padding: 5px;
+    }
+    
+    .game-container {
+        padding: 5px;
+    }
+    
+    #gameCanvas {
+        max-height: 60vh;
+    }
+    
+    h1 {
+        margin-bottom: 10px;
+    }
+    
+    .mobile-controls {
+        margin-top: 10px;
+        max-width: 200px;
+    }
+}
